@@ -4,5 +4,8 @@ from django.http import HttpResponse
 # Create your views here.
 
 
+
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    menu  = list(menu_item.objects.values())
+    print(Menu)
+    return JsonResponse({ 'data': menu }) 

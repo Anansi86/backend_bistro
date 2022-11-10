@@ -6,10 +6,13 @@ class menu_item(models.Model):
     description = models.CharField(max_length=200, null=False, blank=False, unique=True)
     price = models.FloatField()
     spicey_level = models.IntegerField()
-    categories = models.ForeignKey('catergories', on_delete=models.CASCADE)
-    cuisines = models.ForeignKey('cuisines', on_delete=models.CASCADE)
+    categories = models.ForeignKey('Category', on_delete=models.CASCADE, default=None, null=True)
+    cuisines = models.ForeignKey('Cuisine', on_delete=models.CASCADE, default=None, null=True)
     
-class category(models.Model):
+    def __str__(self):
+        return self.title
+
+class Category(models.Model):
     pass
-class cuisine(models.Model):
+class Cuisine(models.Model):
     pass

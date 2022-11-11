@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import menu_item, category, cuisine
+from .models import menu_item, Category, Cuisine
 
 
 class menu_itemAdmin(admin.ModelAdmin):
@@ -8,8 +8,8 @@ admin.site.register(menu_item, menu_itemAdmin)
 
 class categoryAdmin(admin.ModelAdmin):
     pass
-admin.site.register(category, categoryAdmin)
+admin.site.register(Category, categoryAdmin)
 
 class cuisineAdmin(admin.ModelAdmin):
     pass
-admin.site.register(cuisine, cuisineAdmin)
+admin.site.register(Cuisine, cuisineAdmin)

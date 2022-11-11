@@ -9,4 +9,4 @@ from .models import menu_item
 def index(request):
     menu = list(menu_item.objects.values())
     print(menu)
-    return JsonResponse({ 'data': menu }) 
+    return JsonResponse({ 'data': menu })

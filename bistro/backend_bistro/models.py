@@ -12,14 +12,14 @@ class menu_item(models.Model):
     def __str__(self):
         return self.title
 
-class category(models.Model):
+class Category(models.Model):
     title = models.CharField(max_length=10, null=True, default=None)
 
     def __str__(self):
         return self.title
 
 
-class cuisine(models.Model):
+class Cuisine(models.Model):
     title = models.CharField(max_length=10, null=True, default=None)
 
     def __str__(self):

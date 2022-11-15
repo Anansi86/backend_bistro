@@ -1,8 +1,8 @@
 from django.contrib.auth.models import User, Group
 from django.shortcuts import render
-#from django.http import HttpResponse, JsonResponse
 from rest_framework import viewsets, permissions
 from .serializers import UserSerializer, GroupSerializer
+#from django.http import HttpResponse, JsonResponse
 
 
 
@@ -11,10 +11,18 @@ class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
-    queryset = backend_bistro.objects.all()
+    queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [permissions.IsAuthenticated]
 
+
+class GroupViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer
+    permission_classes = [permissions.IsAuthenticated]
 
 #def index(request):
 
